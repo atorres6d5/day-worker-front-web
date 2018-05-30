@@ -1,0 +1,5 @@
+export const POST_TITLE_CHANGE = "title_changed"
+export const POST_LOCATION_CHANGE = "location_changed"
+export const SUBMIT_NEW_HELP_POST = "submit_new_post"
+export const NEW_POST_SUCCESS = "new_post_worked"
+export const NEW_POST_FAIL = "request_failed"
