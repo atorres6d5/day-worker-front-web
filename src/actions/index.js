@@ -8,7 +8,8 @@ import{
   PASSWORD_CHANGE_LOGIN,
   ATTEMPT_LOGIN_AUTH,
   LOGIN_SUCCESS,
-  LOGIN_FAIL
+  LOGIN_FAIL,
+  SAVE_TOKEN
 } from "./types.js"
 
 import axios from "axios"
@@ -30,17 +31,23 @@ export const passwordChanged = (text) => {
   }
 }
 
-export const attemptLogin = (email, password) => {
+export const attemptLogin = ({email, password}) => {
+  console.log(email, password);
   return (dispatch)=>{
     dispatch({type: ATTEMPT_LOGIN_AUTH})
+    axios.post(`${URL}/users/login`, { email, password })
+    .then(data=>{
+      console.log(data, "result data");
+      localStorage.setItem('Token', data.data.token)
+      dispatch({type: LOGIN_SUCCESS, payload:data.token})
+      this.props.history.push('/home')
+    })
+    .catch(err=>{
+      console.log(err)
+      dispatch({type:LOGIN_FAIL, payload:err })
+    })
   }
 
-
-
-  // return{
-  //   type:ATTEMPT_LOGIN_AUTH,
-  //   payload:
-  // }
 }
 
 

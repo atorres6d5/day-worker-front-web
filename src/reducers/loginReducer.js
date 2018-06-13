@@ -27,6 +27,12 @@ export default ( state = INITIAL_STATE, action)=>{
     case PASSWORD_CHANGE_LOGIN:
       return{ ...state, password:action.payload}
 
+    case LOGIN_SUCCESS:
+      return INITIAL_STATE
+
+    case LOGIN_FAIL:
+      return { ...state, error:action.payload}
+
 
     default:
       return state
