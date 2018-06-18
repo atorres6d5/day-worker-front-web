@@ -11,6 +11,9 @@ import{
   LOGIN_FAIL,
   SAVE_TOKEN
 } from "./types.js"
+// import  history from 'history'
+import { push } from 'react-router-redux'
+
 
 import axios from "axios"
 
@@ -39,8 +42,9 @@ export const attemptLogin = ({email, password}) => {
     .then(data=>{
       console.log(data, "result data");
       localStorage.setItem('Token', data.data.token)
-      dispatch({type: LOGIN_SUCCESS, payload:data.token})
-      this.props.history.push('/home')
+      dispatch({type: LOGIN_SUCCESS, payload:data.data.token})
+      dispatch(push('home'))
+
     })
     .catch(err=>{
       console.log(err)

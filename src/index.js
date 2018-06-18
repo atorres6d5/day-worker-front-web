@@ -6,8 +6,12 @@ import registerServiceWorker from './registerServiceWorker';
 import reducers from "./reducers"
 import ReduxThunk from 'redux-thunk'
 import { createStore, applyMiddleware } from 'redux'
+import { routerMiddleware, push } from 'react-router-redux'
+import createHistory from "history/createBrowserHistory";
 
-const store = createStore(reducers, {}, applyMiddleware(ReduxThunk))
+const history = createHistory()
 
-ReactDOM.render(<Root store={store} />, document.getElementById('root'));
+const store = createStore(reducers, {}, applyMiddleware(ReduxThunk, routerMiddleware(history)))
+
+ReactDOM.render(<Root store={store} history={history} />, document.getElementById('root'));
 registerServiceWorker();

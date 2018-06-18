@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 import { connect } from 'react-redux';
-import { emailChanged, passwordChanged, attemptLogin } from "../actions"
+import { emailChanged, passwordChanged, attemptLogin } from "../actions";
+import { withRouter } from 'react-router-dom';
 
 
 class Login extends Component {
@@ -14,6 +15,8 @@ class Login extends Component {
   }
 
   render() {
+    console.log(this.props)
+
     return (
       <div className='login-form'>
     {/*
@@ -61,10 +64,10 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps = ({ login }) => {
-  const { email, password, error, loading } = login
+const mapStateToProps = (props) => {
+  const {login, email, password, error, loading } = props.login
 
-  return { email, password, error, loading }
+  return {login, email, password, error, loading }
 };
 
-export default connect(mapStateToProps,{ emailChanged, passwordChanged, attemptLogin })(Login);
+export default withRouter(connect(mapStateToProps, { emailChanged, passwordChanged, attemptLogin })(Login));

@@ -11,6 +11,7 @@ const INITIAL_STATE = {
   password:"",
   error:"",
   loading:false,
+  login:false
 }
 
 
@@ -28,7 +29,7 @@ export default ( state = INITIAL_STATE, action)=>{
       return{ ...state, password:action.payload}
 
     case LOGIN_SUCCESS:
-      return INITIAL_STATE
+      return { ...state, login:true }
 
     case LOGIN_FAIL:
       return { ...state, error:action.payload}
