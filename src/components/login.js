@@ -12,13 +12,12 @@ class Login extends Component {
 
   attemptLogin = ( e )=>{
     e.preventDefault()
+    console.log(this.props)
     this.props.attemptLogin({email:this.props.email, password:this.props.password})
 
   }
 
   render() {
-    console.log(this.props)
-
     return (
       <div className='login-form'>
     {/*
