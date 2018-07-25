@@ -9,7 +9,7 @@ import {
   Segment,
   Container
 } from 'semantic-ui-react'
-import Review from './review.js'
+import Reviews from './reviews.js'
 
 
 
@@ -34,7 +34,43 @@ class Home extends Component {
       enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla
       ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.
       Curabitur ullamcorper ultricies nisi.`,
-      contact:{phone:`(206)-867-5309`, email:"woodWorker@gmail.com"}
+      contact:{phone:`(206)-867-5309`, email:"woodWorker@gmail.com"},
+      reviews:[
+        {
+          date:'04/20/20',
+          user:'sir-Mix-A-Lot',
+          review:"blah blah blah said some shit", rating:3,
+          title:"the time i got some stuff done and i didnt have to do it my self yayayay!!!"
+        },
+        {
+          date:'04/20/20',
+          user:'sir-Mix-A-Lot',
+          review:"blah blah blah said some shit", rating:3,
+          title:"the time i got some stuff done and i didnt have to do it my self yayayay!!!"
+        },
+        {
+          date:'04/20/20',
+          user:'sir-Mix-A-Lot',
+          review:"blah blah blah said some shit", rating:3,
+          title:"the time i got some stuff done and i didnt have to do it my self yayayay!!!"
+        },
+        {
+          date:'04/20/20',
+          user:'sir-Mix-A-Lot',
+          review:"blah blah blah said some shit", rating:3,
+          title:"the time i got some stuff done and i didnt have to do it my self yayayay!!!"
+        },{
+          date:'04/20/20',
+          user:'sir-Mix-A-Lot',
+          review:"blah blah blah said some shit", rating:3,
+          title:"the time i got some stuff done and i didnt have to do it my self yayayay!!!"
+        },{
+          date:'04/20/20',
+          user:'sir-Mix-A-Lot',
+          review:"blah blah blah said some shit", rating:3,
+          title:"the time i got some stuff done and i didnt have to do it my self yayayay!!!"
+        }
+      ]
     }
 
   }
@@ -53,9 +89,9 @@ class Home extends Component {
     return (
       <Grid>
         <Grid.Row>
-
+          {/* header banner goes here */}
         </Grid.Row>
-        <Grid.Row columns={3} centered stretched>
+        <Grid.Row className="home-first-row" columns={3} centered stretched>
           <Grid.Column>
             <Card
               image="./img/profile_placeholder.jpg"
@@ -100,7 +136,7 @@ class Home extends Component {
             </Segment>
             <Segment>
               <Header>Reviews</Header>
-              <Review date="04/20/2014" user="theMoneyMan" review="lorim ipsum stuff" rating={5} />
+              <Reviews reviews={this.state.reviews}/>
             </Segment>
           </Grid.Column>
         </Grid.Row>
