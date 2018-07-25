@@ -1,5 +1,17 @@
 import React, { Component } from 'react';
-import { Grid, Image, Card, Icon, Header, Label, Segment, Container} from 'semantic-ui-react'
+import {
+  Grid,
+  Image,
+  Card,
+  Icon,
+  Header,
+  Label,
+  Segment,
+  Container
+} from 'semantic-ui-react'
+import Review from './review.js'
+
+
 
 class Home extends Component {
   constructor(){
@@ -21,7 +33,8 @@ class Home extends Component {
       vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac,
       enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla
       ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.
-      Curabitur ullamcorper ultricies nisi.`
+      Curabitur ullamcorper ultricies nisi.`,
+      contact:{phone:`(206)-867-5309`, email:"woodWorker@gmail.com"}
     }
 
   }
@@ -29,9 +42,12 @@ class Home extends Component {
 
   render() {
     const extra = (
-      <a>
-        {this.state.projects.length} Projects
-      </a>
+      <div>
+        <a>
+          {this.state.projects.length} Projects
+        </a>
+        <p>Phone: {this.state.contact.phone}<br/>Email: {this.state.contact.email}</p>
+      </div>
     )
 
     return (
@@ -81,7 +97,10 @@ class Home extends Component {
               <Container>
                 <p>{this.state.about}</p>
               </Container>
-
+            </Segment>
+            <Segment>
+              <Header>Reviews</Header>
+              <Review date="04/20/2014" user="theMoneyMan" review="lorim ipsum stuff" rating={5} />
             </Segment>
           </Grid.Column>
         </Grid.Row>
