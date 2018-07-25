@@ -14,3 +14,5 @@ export const LOGIN_FAIL= "login_fail"
 export const SAVE_TOKEN= "save_token"
 //Home component actions
 export const PROJECTS_CLICK='projects_click'
+export const REQUEST_USER_PROFILE = 'request_user_profile'
+export const REQUEST_USER_SUCCESS = 'request_user_success'

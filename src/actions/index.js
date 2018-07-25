@@ -9,7 +9,9 @@ import{
   ATTEMPT_LOGIN_AUTH,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
-  SAVE_TOKEN
+  SAVE_TOKEN,
+  REQUEST_USER_PROFILE,
+  REQUEST_USER_SUCCESS
 } from "./types.js"
 
 import { push } from 'react-router-redux'
@@ -53,7 +55,14 @@ export const attemptLogin = ({email, password}) => {
 //Home actions
 export const requestUser = ({ token }) =>{
   console.log(token)
-  axios.post(`${URL}/api/`)
+  return (dispatch)=>{
+    dispatch({type:REQUEST_USER_PROFILE})
+    axios.post(`${URL}/api/`,{token})
+    .then(result=>{
+      dispatch({type:REQUEST_USER_SUCCESS,  payload:result.data})
+    })
+    .catch(err=>err)
+  }
 }
 
 
