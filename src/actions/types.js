@@ -12,4 +12,5 @@ export const ATTEMPT_LOGIN_AUTH = "attempt_login_auth"
 export const LOGIN_SUCCESS = "login_success"
 export const LOGIN_FAIL= "login_fail"
 export const SAVE_TOKEN= "save_token"
-// export const GO_HOME_YOU_DRUNK
+//Home component actions
+export const PROJECTS_CLICK='projects_click'

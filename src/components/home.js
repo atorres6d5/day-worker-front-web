@@ -9,6 +9,8 @@ import {
   Segment,
   Container
 } from 'semantic-ui-react'
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import Reviews from './reviews.js'
 
 
@@ -91,19 +93,19 @@ class Home extends Component {
         <Grid.Row>
           {/* header banner goes here */}
         </Grid.Row>
-        <Grid.Row className="home-first-row" columns={3} centered stretched>
-          <Grid.Column>
+
+        <Grid.Row className="home-first-row" columns={12} centered stretched>
+          <Grid.Column width={6}>
             <Card
               image="./img/profile_placeholder.jpg"
               header={this.state.name}
               meta={this.state.skills}
               description={this.state.blurb}
               extra={extra}
-              fluid
 
             />
             </Grid.Column>
-            <Grid.Column>
+            <Grid.Column width={6}>
               <Segment stretched>
                   <Header as="h1">Projects</Header>
                   <Header as="h3">Gallery</Header>
@@ -146,4 +148,11 @@ class Home extends Component {
 
 }
 
-export default Home;
+
+const mapStateToProps = (props) =>{
+  const { user, projects, reviews } = props.home
+
+  return { user, projects, reviews}
+}
+
+export default withRouter(connect(mapStateToProps, {})(Home));

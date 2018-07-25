@@ -11,15 +11,13 @@ import{
   LOGIN_FAIL,
   SAVE_TOKEN
 } from "./types.js"
-// import  history from 'history'
+
 import { push } from 'react-router-redux'
-
-
 import axios from "axios"
 
 const URL = process.env.REACT_APP_API_URL_DEV
 
-
+//Login Actions
 export const emailChanged = ( text ) => {
   return {
     type: EMAIL_TEXT_CHANGE,
@@ -44,15 +42,20 @@ export const attemptLogin = ({email, password}) => {
       localStorage.setItem('Token', data.data.token)
       dispatch({type: LOGIN_SUCCESS, payload:data.data.token})
       dispatch(push('home'))
-
     })
     .catch(err=>{
       console.log(err)
       dispatch({type:LOGIN_FAIL, payload:err })
     })
   }
-
 }
+
+//Home actions
+export const requestUser = ({ token }) =>{
+  console.log(token)
+  axios.post(`${URL}/api/`)
+}
+
 
 
 
