@@ -10,12 +10,12 @@ import{
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   SAVE_TOKEN
-} from "./types.js"
+} from './types.js'
 // import  history from 'history'
 import { push } from 'react-router-redux'
 
 
-import axios from "axios"
+import axios from 'axios'
 
 const URL = process.env.REACT_APP_API_URL_DEV
 
@@ -40,7 +40,7 @@ export const attemptLogin = ({email, password}) => {
     dispatch({type: ATTEMPT_LOGIN_AUTH})
     axios.post(`${URL}/users/login`, { email, password })
     .then(data=>{
-      console.log(data, "result data");
+      console.log(data, 'result data');
       localStorage.setItem('Token', data.data.token)
       dispatch({type: LOGIN_SUCCESS, payload:data.data.token})
       dispatch(push('home'))

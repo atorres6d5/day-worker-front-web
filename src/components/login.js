@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 import { connect } from 'react-redux';
-import { emailChanged, passwordChanged, attemptLogin } from "../actions";
+import { emailChanged, passwordChanged, attemptLogin } from '../actions';
 import { withRouter } from 'react-router-dom';
 
 

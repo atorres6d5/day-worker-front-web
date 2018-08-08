@@ -5,13 +5,13 @@ class Home extends Component {
   constructor(){
     super()
     this.state={
-      name:"LT. Dan Taylor",
+      name:'LT. Dan Taylor',
       reviews:[2,4,6,7],
       status:'Available',
       skills:['Tile ', 'Yard ' , 'Bathroom '],
       zipcodes:['98034', '98033'],
-      blurb:"Exp in home flooring, tile hardwood lamanate you name i can do it. always willing to learn",
-      projects:[{title:'fence', photo:"./img/profile_placeholder.jpg"}, {title:'basement', photo:"./img/profile_placeholder.jpg"}],
+      blurb:'Exp in home flooring, tile hardwood lamanate you name i can do it. always willing to learn',
+      projects:[{title:'fence', photo:'./img/profile_placeholder.jpg'}, {title:'basement', photo:'./img/profile_placeholder.jpg'}],
       about:`Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
       Aenean massa strong. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
       ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla
@@ -42,7 +42,7 @@ class Home extends Component {
         <Grid.Row columns={3} centered stretched>
           <Grid.Column>
             <Card
-              image="./img/profile_placeholder.jpg"
+              image='./img/profile_placeholder.jpg'
               header={this.state.name}
               meta={this.state.skills}
               description={this.state.blurb}
@@ -53,14 +53,14 @@ class Home extends Component {
             </Grid.Column>
             <Grid.Column>
               <Segment stretched>
-                  <Header as="h1">Projects</Header>
-                  <Header as="h3">Gallery</Header>
+                  <Header as='h1'>Projects</Header>
+                  <Header as='h3'>Gallery</Header>
                   <Image.Group>
                     {this.state.projects.map(a=>(
                         <Image
                           centered
                           label={a.title}
-                          size="tiny"
+                          size='tiny'
                           src={a.photo}
                         />
                     ))}
@@ -69,8 +69,8 @@ class Home extends Component {
                   <p>Reviews: {this.state.reviews.length}</p>
                   <p>Review Avg: 4.5</p>
                   <p>Status: {this.state.status}</p>
-                  <p>Skills: {this.state.skills.join(", ")}</p>
-                  <p>Working zipcodes: {this.state.zipcodes.join(", ")}</p>
+                  <p>Skills: {this.state.skills.join(', ')}</p>
+                  <p>Working zipcodes: {this.state.zipcodes.join(', ')}</p>
                 </Segment>
             </Grid.Column>
         </Grid.Row>
