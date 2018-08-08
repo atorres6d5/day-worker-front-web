@@ -122,11 +122,11 @@ class Home extends Component {
                     ))}
                   </Image.Group>
 
-                  <p>Reviews: {this.state.reviews.length}</p>
+                  <p>Reviews: {this.state.user.reviews.length}</p>
                   <p>Review Avg: 4.5</p>
-                  <p>Status: {this.state.status}</p>
-                  <p>Skills: {this.state.skills.join(", ")}</p>
-                  <p>Working zipcodes: {this.state.zipcodes.join(", ")}</p>
+                  <p>Status: {this.state.user.status}</p>
+                  <p>Skills: {this.state.user.skills.join(", ")}</p>
+                  <p>Working zipcodes: {this.state.user.zipcodes.join(", ")}</p>
                 </Segment>
             </Grid.Column>
         </Grid.Row>

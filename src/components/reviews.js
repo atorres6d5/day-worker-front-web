@@ -16,12 +16,13 @@ class Reviews extends Component {
   render() {
     return (
       <Grid  devided padded>
-        <Grid.Row columns={8}>
+        <Grid.Row style={{'padding':'0'}} columns={8}>
           {this.props.reviews.map(review=>{
             return(
               <Item.Group >
                 <Grid.Column width={3} stretched centered textAlign="left">
                   <Review
+                    style={{'padding':'0'}}
                      date={review.date}
                      user={review.user}
                      review={review.review}
