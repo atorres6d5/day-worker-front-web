@@ -12,7 +12,7 @@ class Login extends Component {
 
   attemptLogin = ( e )=>{
     e.preventDefault()
-    console.log(this.props)
+    // console.log(this.props)
     this.props.attemptLogin({email:this.props.email, password:this.props.password})
 
   }
@@ -56,7 +56,7 @@ class Login extends Component {
           </Segment>
         </Form>
         <Message>
-          New to us? <a href='#'>Sign Up</a>
+          New to us? <a onClick={(e)=>this.props.history.push('./signup')}>Sign Up</a>
         </Message>
       </Grid.Column>
     </Grid>

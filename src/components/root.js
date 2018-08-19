@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import Login from './login.js'
 import Home from './home.js'
+import NewUser from './newUser'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { ConnectedRouter } from "react-router-redux";
+import '../index.css'
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={ props => ( localStorage.getItem('Token') ? (<Component {...props}/>) : (
@@ -24,8 +26,9 @@ const Root = ({ store, history }) => {
     <Provider store={store}>
       <ConnectedRouter history={history}>
         <Switch>
-          <PrivateRoute exact path='/home' component={Home} />
-          <Route path='/' component={Login} />
+          <PrivateRoute exact path="/home" component={Home} />
+          <Route path="/signup" component={NewUser} />
+          <Route path="/" component={Login} />
         </Switch>
       </ConnectedRouter>
     </Provider>
