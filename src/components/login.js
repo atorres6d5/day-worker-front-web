@@ -12,7 +12,7 @@ class Login extends Component {
 
   attemptLogin = ( e )=>{
     e.preventDefault()
-    console.log(this.props)
+    // console.log(this.props)
     this.props.attemptLogin({email:this.props.email, password:this.props.password})
 
   }

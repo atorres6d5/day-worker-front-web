@@ -17,7 +17,7 @@ const INITIAL_STATE = {
   email:'',
   password:'',
   passwordConfirm:'',
-  zipcode:null,
+  zipcode:'',
   phone:'',
   userType:null,
   passMatch:null,

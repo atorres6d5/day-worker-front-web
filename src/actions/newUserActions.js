@@ -15,49 +15,50 @@ import {
 
 const URL = process.env.REACT_APP_API_URL_DEV
 
-const emailChanged = ( text ) => {
+export const emailChanged = ( text ) => {
   return {
     type: EMAIL_TEXT_CHANGE,
     payload: text
   }
 }
 
-const passwordChanged = (text) => {
+export const passwordChangedNew = (text) => {
+  console.log(text);
   return{
     type:NEW_PASSWORD,
     payload:text
   }
 }
 
-const passConfirm = (text) =>{
+export const passConfirm = (text) =>{
   return{
     type:NEW_PASSWORD_CONFIRM,
     payload: text
   }
 }
 
-const nameChange = ( text ) => {
+export const nameChange = ( text ) => {
   return{
     type:NAME_CHANGE,
     payload: text
   }
 }
 
-const userNameChange = ( text ) =>{
+export const userNameChange = ( text ) =>{
   return{
     type:USERNAME_CHANGE,
     payload: text
   }
 }
 
-const zipChange = ( text ) => {
+export const zipChange = ( text ) => {
   return{
     type:ZIPCODE_CHANGE,
     payload: text
   }
 }
 
-const phoneChange = ( text ) => {
+export const phoneChange = ( text ) => {
   return{
     type:PHONE_CHANGE,
     payload: text
@@ -65,7 +66,7 @@ const phoneChange = ( text ) => {
 }
 
 
-const userType = ( text ) => {
+export const userType = ( text ) => {
   switch ( text ) {
     case ("WORKER"):
      return {
@@ -88,7 +89,7 @@ const userType = ( text ) => {
   }
 }
 
-const passMatch = ( {pass1, pass2} ) =>{
+export const passMatch = ( {pass1, pass2} ) =>{
   switch ( pass1, pass2 ) {
     case (pass1 === pass2) :
       return {
