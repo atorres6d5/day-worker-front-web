@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Login from './login.js'
 import Home from './home.js'
+import NewUser from './newUser'
 import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
@@ -26,6 +27,7 @@ const Root = ({ store, history }) => {
       <ConnectedRouter history={history}>
         <Switch>
           <PrivateRoute exact path="/home" component={Home} />
+          <Route path="/signup" component={NewUser} />
           <Route path="/" component={Login} />
         </Switch>
       </ConnectedRouter>
