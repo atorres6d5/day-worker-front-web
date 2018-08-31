@@ -99,7 +99,7 @@ class Home extends Component {
         <Grid.Row className="home-first-row" columns={12} centered stretched>
           <Grid.Column width={6}>
             <Card
-              image="./img/profile_placeholder.jpg"
+              image='./img/profile_placeholder.jpg'
               header={this.state.name}
               meta={this.state.skills}
               description={this.state.blurb}
@@ -109,14 +109,14 @@ class Home extends Component {
             </Grid.Column>
             <Grid.Column width={6}>
               <Segment stretched>
-                  <Header as="h1">Projects</Header>
-                  <Header as="h3">Gallery</Header>
+                  <Header as='h1'>Projects</Header>
+                  <Header as='h3'>Gallery</Header>
                   <Image.Group>
                     {this.state.projects.map(a=>(
                         <Image
                           centered
                           label={a.title}
-                          size="tiny"
+                          size='tiny'
                           src={a.photo}
                         />
                     ))}

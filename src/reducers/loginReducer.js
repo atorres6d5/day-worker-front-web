@@ -4,12 +4,12 @@ import {
   ATTEMPT_LOGIN_AUTH,
   LOGIN_SUCCESS,
   LOGIN_FAIL
-} from "../actions/types.js"
+} from '../actions/types.js'
 
 const INITIAL_STATE = {
-  email:"",
-  password:"",
-  error:"",
+  email:'',
+  password:'',
+  error:'',
   loading:false,
   login:false
 }

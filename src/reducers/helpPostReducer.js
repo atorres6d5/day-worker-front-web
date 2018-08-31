@@ -4,11 +4,11 @@ import{
   SUBMIT_NEW_HELP_POST,
   NEW_POST_SUCCESS,
   NEW_POST_FAIL,
-} from "../actions/types.js"
+} from '../actions/types.js'
 
 const INITIAL_STATE = {
-    postUser:"",
-    postTitle:"",
+    postUser:'',
+    postTitle:'',
     postBlurb: false,
     err:null,
     loggedIn:false,
